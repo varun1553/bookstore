@@ -1,0 +1,35 @@
+.active{
+    background-color: rgb(189, 65, 86);
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 3px;
+  }
+  #drop-down{
+    color:#4cb84c;
+    font-weight: bold;
+
+  }
+
+  .navitem {
+    margin: 0;
+    padding: 5px;
+  }
+  
+  .navitem a {
+    color: #c5baba;
+    text-decoration: none;
+    padding: 10px 15px;
+  }
+  
+  .navitem a:hover {
+    background-color: #000000;
+  }
+  
+  .navitem a.active {
+    background-color: #1a4f8d;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
