@@ -71,4 +71,40 @@ bookApp.get('/books/download/:id',
   })
 );
 
+bookApp.delete('/removebook/:id', 
+  expressAsyncHandler(async (request, response) => {
+    // Get bookCollectionObject
+    let bookCollectionObject = request.app.get("bookCollectionObject");
+    // Get the book ID from the request params
+    let bookId = request.params.id;
+
+    // Delete the book by ID
+    let result = await bookCollectionObject.deleteOne({ _id: new ObjectId(bookId) });
+
+    if (result.deletedCount === 1) {
+      // Send response if delete was successful
+      response.send({ message: "Book deleted successfully" });
+    } else {
+      // Send response if book not found
+      response.status(404).send({ message: "Book not found" });
+    }
+  })
+);
+
+bookApp.post('/addbook', 
+  expressAsyncHandler(async (request, response) => {
+    // Get bookCollectionObject
+    let bookCollectionObject = request.app.get("bookCollectionObject");
+    // Get the new book details from the request body
+    let newBook = request.body;
+
+    // Add the new book to the collection
+    let result = await bookCollectionObject.insertOne(newBook);
+
+    // Send response with the new book details
+    response.send({ message: "Book added successfully", payload: result.ops[0] });
+  })
+);
+
+
 module.exports = bookApp;

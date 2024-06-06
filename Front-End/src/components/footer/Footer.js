@@ -7,7 +7,8 @@ function Footer() {
         <small>
           BookMaster<br />
           <strong>Royal Melbourne Institute of Technology</strong>, All Rights Reserved
-          © {new Date().getFullYear()}
+          © {new Date().getFullYear()}<br /> 
+          Contact <a href="#">sahithi@gmail.com</a> for queries
         </small>
         <nav className="footer-nav">
           <a href="#">Terms of Use</a><br />

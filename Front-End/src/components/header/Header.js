@@ -3,7 +3,7 @@ import "./Header.css";
 import { Container, Nav, Navbar, NavDropdown, Modal, Button, Form } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-
+import homeImg from "../../image/gettyimages"
 import Signup from "../Signup";
 import Login from "../Login";
 import { useSelector } from "react-redux";
@@ -71,9 +71,9 @@ function Header() {
     <div>
       <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark" style={{padding:15}}>  
         <Container>
-          {/* <Navbar.Brand href="/">
+          <Navbar.Brand href="/">
             <img src={homeImg} alt="" className="shadow-lg rounded" style={{ height: 60, width: 150 }} />
-          </Navbar.Brand> */}
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">

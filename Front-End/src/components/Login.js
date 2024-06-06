@@ -116,6 +116,15 @@ function Login() {
                 />
                 <Form.Check.Label>User</Form.Check.Label>
               </Form.Check>
+
+              <Form.Check inline type="radio" id="user">
+                <Form.Check.Input
+                  type="radio"
+                  value="user"
+                  {...register("userType", { required: true })}
+                />
+                <Form.Check.Label>Admin</Form.Check.Label>
+              </Form.Check>
               
             </Form.Group>
 

@@ -25,7 +25,7 @@ function Signup() {
 
       // http post req
       console.log(formData);
-      const response = await axios.post(apiUrl+'/user-api/create-user', formData, {
+      const response = await axios.post(apiUrl + '/user-api/create-user', formData, {
         headers: {
           "Content-Type": 'application/json',
         },
@@ -117,8 +117,8 @@ function Signup() {
                 {...register("email", {
                   required: true,
                   pattern: {
-                    value: /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
-                    message: "Please enter a valid @my.unt.edu email address",
+                    value: /^[a-zA-Z0-9._%+-]+@my\.unt\.edu$/,
+                    message: "Please enter a valid @gmail.com email address",
                   },
                 })}
                 id="email"
@@ -157,6 +157,21 @@ function Signup() {
               )}
             </Form.Group>
 
+
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="security">User Type</Form.Label>
+              <Form.Control
+                type="text"
+                defaultValue="user"  
+                readOnly  
+                {...register("type", { required: true })}
+                id="security"
+              />
+
+              {errors.city && (
+                <p className="text-danger">* This Question is required</p>
+              )}
+            </Form.Group>
 
             <Button className="general_button" variant="primary" type="submit">
               Signup <MdLogin />
