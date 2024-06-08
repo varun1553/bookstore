@@ -115,11 +115,7 @@ function Signup() {
                 type="text"
                 placeholder="Enter email"
                 {...register("email", {
-                  required: true,
-                  pattern: {
-                    value: /^[a-zA-Z0-9._%+-]+@my\.unt\.edu$/,
-                    message: "Please enter a valid @gmail.com email address",
-                  },
+                  required: true
                 })}
                 id="email"
               />
