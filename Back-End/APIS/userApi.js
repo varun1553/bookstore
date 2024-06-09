@@ -143,7 +143,7 @@ userApp.put("/change-password", expressAsyncHandler(async (request, response) =>
 
 }));
 
-userApp.post("/forgotpassword",verifyToken, expressAsyncHandler(async (request, response) => {
+userApp.post("/forgotpassword", expressAsyncHandler(async (request, response) => {
   // Extract username and new password from the request body
   const { username, securityQuestion } = request.body;
 
